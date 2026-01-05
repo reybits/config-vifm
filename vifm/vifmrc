@@ -256,12 +256,15 @@ filetype {*.[1-8]},<text/troff> man ./%c
 fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 
 " Image
-filetype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.pcx,*.tga,*.psd,*.icns,*.xbm,*.xpm,*.xcf,*.tiff,*.tif,*.ico,*.svg},<image/*>
-       \ {View in Simple Viewer GL}
-       \ ~/tools/sviewgl %f &> /dev/null &
+filetype
+       \*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.pcx,*.tga,*.psd,*.icns,*.xbm,
+       \*.xpm,*.xcf,*.tiff,*.tif,*.ico,*.svg,*.ppm,<image/*>
+       \ sviewgl %f &> /dev/null &
 
-fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-         \ identify %f
+fileviewer
+       \*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.pcx,*.tga,*.psd,*.icns,*.xbm,
+       \*.xpm,*.xcf,*.tiff,*.tif,*.ico,*.svg,*.ppm,<image/*>
+       \ identify %f
 
 " MD5
 filetype *.md5
